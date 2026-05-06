@@ -1,265 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* =============================================
-   RESET + VARIABLES
-   ============================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --rojo: #c62828;
-  --beige: #E8E4DC;
-  --gris-fondo: #50464a;
-  --blanco: #f0efeb;
-  --negro: #1a1a1a;
-
-  --max-width: 1200px;
-  --radius: 20px;
-  --padding: 20px;
-}
-
-/* =============================================
-   BASE
-   ============================================= */
 body {
+  background-color: #E8E4DC;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--beige);
-  color: var(--negro);
-  line-height: 1.6;
+  color: #3a2e2e;
+  line-height: 1.5;
 }
 
+/* CONTENEDOR */
 .container {
-  max-width: var(--max-width);
+  width: 90%;
+  max-width: 500px;
   margin: auto;
-  padding: 0 var(--padding);
 }
 
-/* =============================================
-   HEADER
-   ============================================= */
+/* HEADER */
 header {
-  background-color: #e1decd;
+  background-color: #E8E4DC;
   padding: 15px 0;
 }
 
 .navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-}
-
-nav ul {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--negro);
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-nav a.active {
-  color: var(--rojo);
-  border-bottom: 2px solid var(--rojo);
-  padding-bottom: 5px;
 }
 
 .logo {
-  height: 60px;
+  width: 90px;
 }
 
-/* =============================================
-   HERO (INDEX + GASTRO)
-   ============================================= */
-.hero,
-.hero-gastro {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 0 40px 5%;
-  margin-bottom: 30px;
+nav ul {
+  display: none; /* oculto como en mobile */
 }
 
-.hero {
-  height: 70vh;
-  background: url('img/fuji-01.png') center/cover no-repeat;
+/* PORTADA */
+main > section:first-child {
+  background-color: #E53935;
+  text-align: center;
+  padding: 30px 0;
+  color: white;
 }
 
-.hero-gastro img {
+main > section:first-child img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
-.hero h1,
-.hero-gastro h1 {
-  font-weight: 800;
+h1 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* TEXTOS */
+h2 {
+  margin: 30px 20px 10px;
+  font-size: 18px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-.hero h1 {
-  color: var(--rojo);
-  font-size: 90px;
-  line-height: 0.8;
+p {
+  margin: 0 20px 20px;
+  font-size: 14px;
 }
 
-.hero-gastro h1 {
-  text-align: center;
-  font-size: 40px;
-  padding: 20px;
-  color: var(--rojo);
+/* BLOQUES (cards) */
+.bloque {
+  margin: 20px 0;
 }
 
-/* =============================================
-   INTRO
-   ============================================= */
-.intro-text,
-.intro-gastro {
-  padding: 30px var(--padding);
-  max-width: var(--max-width);
-  margin: auto;
+article.bloque {
+  background: transparent;
 }
 
-.intro-mosaic {
-  display: grid;
-  gap: 15px;
-  grid-template-columns: 1fr 1fr;
-  margin: 20px 0 40px;
-}
-
-.intro-mosaic img {
+article img {
   width: 100%;
-  object-fit: cover;
-  border-radius: var(--radius);
-  aspect-ratio: 1/1;
+  border-radius: 12px;
+  margin: 10px 0;
 }
 
-/* =============================================
-   GRID (DESTINOS + ARTICULOS)
-   ============================================= */
-.destinos-grid,
-.articulos-lista {
-  display: grid;
-  gap: 25px;
+h3 {
+  margin: 10px 20px 5px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.card img,
-.articulo-item img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: var(--radius);
+/* SECCIONES */
+section.container {
+  margin-top: 10px;
 }
 
-.articulo-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.articulo-item img {
-  height: 180px;
-}
-
-/* =============================================
-   SECCIONES OSCURAS
-   ============================================= */
-.destinos,
-.newsletter {
-  background-color: var(--gris-fondo);
-  color: var(--blanco);
-  padding: 60px var(--padding);
-}
-
-/* =============================================
-   NEWSLETTER
-   ============================================= */
-.newsletter {
-  background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('img/kiyomizudera.jpeg') center/cover no-repeat;
+/* PALABRA */
+.palabra {
   text-align: center;
+  margin: 40px 0;
 }
 
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 25px;
+.palabra h4 {
+  font-size: 12px;
+  color: #b71c1c;
+  text-transform: uppercase;
 }
 
-.newsletter input {
+.palabra h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.palabra-box {
+  background: #d9cbbd;
   padding: 15px;
   border-radius: 10px;
-  border: none;
-  max-width: 350px;
-  width: 100%;
+  width: 85%;
+  margin: 15px auto;
+  font-size: 14px;
 }
 
-.newsletter button {
-  padding: 15px 30px;
-  background-color: #370f1d;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
+.palabra-box strong {
+  color: #b71c1c;
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* =============================================
-   FOOTER
-   ============================================= */
-footer {
-  background-color: #370f1d;
-  color: white;
-  padding: 60px 20px 30px;
+/* BOTÓN VOLVER */
+.volver {
+  display: block;
   text-align: center;
+  margin: 30px 0;
+  color: #b71c1c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  background-color: #4a0f1c;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
 }
 
 footer h3 {
-  font-size: 28px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
-footer a {
-  display: block;
-  color: white;
+footer p {
+  margin: 5px 0;
   font-size: 13px;
-  margin-bottom: 20px;
-  text-decoration: none;
 }
 
-/* =============================================
-   RESPONSIVE
-   ============================================= */
-@media (min-width: 768px) {
-
-  .destinos-grid,
-  .articulos-lista {
-    grid-template-columns: repeat(2, 1fr);
-  }
+footer hr {
+  margin: 15px auto;
+  width: 80%;
+  border: 0.5px solid rgba(255,255,255,0.3);
 }
-
-@media (min-width: 1024px) {
-
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .destinos-grid,
-  .articulos-lista {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero-gastro img {
-    height: 300px;
-  }
 }
